@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+<body>
+
+    <h1>Guessing Game</h1>
+
+    <p id="demo"></p>
+
+    <script>
+
+        let playAgain = "yes";
+
+        while(playAgain === "yes"){
+
+            let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+            document.getElementById("demo").innerHTML =
+            "Random Number Has Been Generated!";
+
+            console.log(randomNumber);
+
+            let guess = 0;
+
+            let guessCount = 0;
+
+            while(guess != randomNumber){
+
+                guess = prompt("Guess a number between 1 and 10:");
+
+                guessCount++;
+
+                if(guess > randomNumber){
+
+                    alert("Your guess is too high. Guess again.");
+
+                }
+                else if(guess < randomNumber){
+
+                    alert("Your guess is too low. Guess again.");
+
+                }
+                else{
+
+                    alert("Correct! The number was " + randomNumber +
+                    ". You made " + guessCount + " guesses.");
+
+                }
+
+            }
+
+            playAgain = prompt("Would you like to play again? Type yes or no.");
+
+            if(playAgain !== null){
+
+                playAgain = playAgain.toLowerCase();
+
+            }
+
+        }
+
+        alert("Thanks for playing the Guessing Game!");
+
+    </script>
+
+</body>
+</html>
